@@ -20,9 +20,8 @@ namespace Lab2Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        string inputstring;
-        double inputdouble;
-        double output;
+        string inputstring, operation, answer;
+        double firstdouble, secondouble, output;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,8 +29,67 @@ namespace Lab2Calculator
 
         private void Input_TextChanged(object sender, TextChangedEventArgs e)
         {
-            inputstring = Input.Text;
-            inputdouble = Convert.ToDouble(inputstring);
+            secondouble = Convert.ToDouble(Input.Text);
+            return;
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "+";
+            firstdouble = firstdouble + secondouble;
+            answer = Convert.ToString(firstdouble);
+            Answer.Content = answer;
+            Input.Text = String.Empty;
+            return;
+        }
+
+        private void Subtract_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+            firstdouble = firstdouble - secondouble;
+            answer = Convert.ToString(firstdouble);
+            Answer.Content = answer;
+            Input.Text = String.Empty;
+            return;
+        }
+
+        private void Multiply_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "×";
+            firstdouble = firstdouble * secondouble;
+            answer = Convert.ToString(firstdouble);
+            Answer.Content = answer;
+            Input.Text = String.Empty;
+            return;
+        }
+
+        private void Divide_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "÷";
+            if (secondouble != 0)
+            {
+                firstdouble = firstdouble / secondouble;
+                answer = Convert.ToString(firstdouble);
+            }
+            else
+            {
+                answer = "∞"; 
+            }
+            Answer.Content = answer;
+            Input.Text = String.Empty;
+            return;
+        }
+
+        private void ClearEntry_Click(object sender, RoutedEventArgs e)
+        {
+            Input.Text = String.Empty;
+            return;
+        }
+
+        private void ClearAnswer_Click(object sender, RoutedEventArgs e)
+        {
+            Answer.Content = "No Answer";
+        }
+
     }
 }

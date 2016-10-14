@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="DAVID PEDERSEN'S CALCULATOR" Height="200" Width="250">
     <Grid>
-        <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="157,10,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name="Add" Content="+" HorizontalAlignment="Left" Margin="157,10,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontSize="20" Click="Add_Click"/>
         <TextBox x:Name="Input" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Input Here" VerticalAlignment="Top" Width="120" TextChanged="Input_TextChanged"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="Answer Here" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Subtract" Content="-" HorizontalAlignment="Left" Margin="157,46,0,0" VerticalAlignment="Top" Width="75" FontSize="20"/>
-        <Button x:Name="Multiply" Content="×" HorizontalAlignment="Left" Margin="157,82,0,0" VerticalAlignment="Top" Width="75" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="Divide" Content="÷" HorizontalAlignment="Left" Margin="157,118,0,0" VerticalAlignment="Top" Width="75" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="Clear" Content="CLEAR" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="75" FontSize="20"/>
+        <Label x:Name="Operator" Content="Selected Operation Here" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Subtract" Content="-" HorizontalAlignment="Left" Margin="157,46,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Click="Subtract_Click"/>
+        <Button x:Name="Multiply" Content="×" HorizontalAlignment="Left" Margin="157,82,0,0" VerticalAlignment="Top" Width="75" FontSize="20" FontWeight="Bold" Click="Multiply_Click"/>
+        <Button x:Name="Divide" Content="÷" HorizontalAlignment="Left" Margin="157,118,0,0" VerticalAlignment="Top" Width="75" FontSize="20" FontWeight="Bold" Click="Divide_Click"/>
+        <Button x:Name="ClearEntry" Content="CLEAR ENTRY" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Click="ClearEntry_Click"/>
+        <Label x:Name="Answer" Content="Answer Here" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ClearAnswer" Content="CLEAR ANSWER" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" FontSize="20" Click="ClearEntry_Click"/>
 
     </Grid>
 </Window>
